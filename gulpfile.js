@@ -23,6 +23,7 @@ var istanbul = require('browserify-istanbul');
 //paths
 var testPath = 'test/**/**.js';
 var binPath = './bin';
+var demoPath = './demo';
 
 var jsBuilds = [
     'VPAIDHTML5Client.js'
@@ -55,6 +56,7 @@ var jsBuilds = [
             .pipe(sourcemaps.init({loadMaps: true}))
             .pipe(sourcemaps.write('./'))
             .pipe(gulp.dest(binPath))
+            .pipe(gulp.dest(demoPath))
             .pipe(reload({stream: true, once: true}));
     }
 });

@@ -71,7 +71,6 @@
                 'AdLinearChange',
                 'AdDurationChange',
                 'AdExpandedChange',
-                'AdRemainingTimeChange', // [Deprecated in 2.0] but will be still fired for backwards compatibility
                 'AdVolumeChange',
                 'AdImpression',
                 'AdVideoStart',
@@ -89,7 +88,7 @@
                 'AdError'
             ].forEach(function(event) {
                 adUnit.subscribe(event, function() {
-                    console.log('---------------------------------------> ' + event, 'arguments:', arguments);
+//                    console.log('---------------------------------------> ' + event, 'arguments:', arguments);
                 })
             });
 
@@ -108,7 +107,7 @@
 
             adUnit.subscribe('AdStarted', function () {
                 console.log('---------------------------------------> AdStarted');
-                adUnit.setAdVolume(0);
+                adUnit.setAdVolume(1);
             });
 
             skipAd.addEventListener('click', function() {
